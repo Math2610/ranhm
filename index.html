@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Fan Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Mundo Mágico de Harry Potter</h1>
+        <input type="text" id="search-bar" placeholder="Buscar...">
+    </header>
+
+    <main>
+        <section id="content">
+            <article>
+                <h2>Sobre o Mundo Mágico</h2>
+                <p>Adicione textos e conteúdos aqui para interagir com a comunidade mágica.</p>
+            </article>
+
+            <article>
+                <h2>Deixe um Comentário</h2>
+                <form id="comment-form" action="comments.php" method="POST">
+                    <input type="text" name="nickname" placeholder="Seu nickname" required>
+                    <textarea name="comment" placeholder="Digite seu comentário" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </article>
+
+            <article id="comments-section">
+                <h2>Comentários da Comunidade</h2>
+                <div id="comments">
+                    <!-- Comentários carregados via PHP -->
+                    <?php
+                    include 'comments.php';
+                    ?>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
